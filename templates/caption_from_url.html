@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+<!-- I need an input box that reads in a URL -->
+
+{% block content %}
+    <h1>{% block title %} Image Captioning From URL {% endblock %}</h1>
+    <form method="post">
+        <label for="title">Input URL Below</label>
+        <br>
+        <input type="text" name="url"
+            placeholder="Picture URL"
+            value="{{ request.form['url'] }}"
+            style="width: 500px;">
+        </input>
+        <br>
+        <br>
+        <button type="submit">Caption It!</button>
+    </form>
+    {% for message in get_flashed_messages() %}
+        <div class="alert">{{ message }}</div>
+    {% endfor %}
+    {% for message in context %}
+        <div class='img'>
+            <img>{{ message['img'] }}</img>
+        </div>
+        <div class='caption'>
+            <p>{{ message['caption'] }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}
+<!-- I need to pass this URL to the python backend -->
+<!-- I need to grab the predicted caption from the python backend -->

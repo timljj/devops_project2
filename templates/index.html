@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <body>
+        <nav>        
+            <a href="{{ url_for('caption_from_file') }}">Caption Your Image From A File Upload!</a>
+            <br>
+            <a href="{{ url_for('caption_from_url') }}">Catption Your Image From A URL</a>
+        </nav>
+        
+    </body>
+
+{% endblock %}
