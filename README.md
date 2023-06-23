@@ -1,9 +1,4 @@
 # Dev Ops Project 2
-Simple Repo to Explore DevOps workflow
-
-
-<!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
-
 
 <!-- PROJECT SHIELDS -->
 <!--
@@ -36,7 +31,6 @@ Simple Repo to Explore DevOps workflow
 </details>
 
 
-
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
@@ -44,7 +38,6 @@ Simple Repo to Explore DevOps workflow
 A simple image captioning web app that allows you to caption images from a URL or a file upload. 
 
 This project attempts to utilise various GitHub Action Workflows like Pylint, Dockerization and Deployment to Google Cloud.
-
 
 
 <!-- GETTING STARTED -->
