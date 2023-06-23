@@ -14,7 +14,7 @@ WORKDIR /src
 RUN pip install -r requirements.txt
 
 # Run this command to export environment variables
-RUN if [ "$(uname)" == "Windows" ]; then set FLASK_APP=app; else export FLASK_APP=app; fi
+RUN if [ "$(uname)" = "Windows" ]; then set FLASK_APP=app; else export FLASK_APP=app; fi
 
 EXPOSE 5000 
 
