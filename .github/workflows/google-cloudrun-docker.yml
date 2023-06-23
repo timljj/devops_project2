@@ -77,7 +77,7 @@ jobs:
       
       - name: Decode Secret
         id: decode-secret
-        run: echo ${{ secrets.GCP_CREDENTIALS }} | base64 --decode > decoded-secret.json
+        run: echo '${{ secrets.GCP_CREDENTIALS }}' | base64 --decode | jq > decoded-secret.json
 
       # NOTE: Alternative option - authentication via credentials json
       - name: Google Auth
