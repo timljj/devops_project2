@@ -1,4 +1,4 @@
-# devops_project2
+# Dev Ops Project 2
 Simple Repo to Explore DevOps workflow
 
 
@@ -29,6 +29,7 @@ Simple Repo to Explore DevOps workflow
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
+    <li><a href="#illustrations">Illustrations</a></li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
   </ol>
@@ -85,11 +86,15 @@ Image Captioning Flow
 <!-- USAGE EXAMPLES -->
 ## Usage
 
+* Caption Image From URL
+  
+  ![image info](https://github.com/timljj/devops_project2/blob/main/static/front_page.PNG)
+  
+  
+  ![image info](https://github.com/timljj/devops_project2/blob/main/static/caption_from_url.PNG)
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
-_For more examples, please refer to the [Documentation](https://example.com)_
-
+  ![image info](https://github.com/timljj/devops_project2/blob/main/static/caption_url_result.PNG)
 
 <!-- ROADMAP -->
 ## Roadmap
