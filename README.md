@@ -106,7 +106,7 @@ Image Captioning Flow
     - [ONGOING] Google Cloud Run
 - [DONE] Add Flask App
 - [DONE] Add Image Captioning Model to Flask App
-- [ONGOING] Caption Image from URL
-  - [ONGOING] Display Image
+- [DONE] Caption Image from URL
+  - [DONE] Display Image
   - [DONE] Display Caption
 - [DONE] Caption Image from File Upload
