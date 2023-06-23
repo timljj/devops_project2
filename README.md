@@ -94,7 +94,7 @@ Image Captioning Flow
 
 - [DONE] Add Webhook Call from GitHub to Discord 
 - [ONGOING] Add GitHub Actions
-    - [ONGOING] Pylint
+    - [DONE] Pylint
     - [ONGOING] Docker
     - [ONGOING] Google Cloud Run
 - [DONE] Add Flask App
@@ -102,4 +102,4 @@ Image Captioning Flow
 - [DONE] Caption Image from URL
   - [DONE] Display Image
   - [DONE] Display Caption
-- [DONE] Caption Image from File Upload
+- [TODO] Caption Image from File Upload

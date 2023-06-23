@@ -1,16 +1,15 @@
 '''This file runs the image captioning app.
 '''
-
+import logging
 import requests
 from PIL import Image
 from flask import Flask, request, render_template, flash, redirect, url_for
-from flask.logging import create_logger
 from transformers import BlipProcessor, BlipForConditionalGeneration
 
-
+logging.basicConfig(level=logging.INFO)
 app = Flask(__name__)
-LOG = create_logger(app)
 
+# For flash message
 app.config['SECRET_KEY'] = '3f651974d8272f5f35717559f41023c8a567f70c34ea3568'
 
 processor = BlipProcessor.from_pretrained("Salesforce/blip-image-captioning-base")
@@ -70,14 +69,14 @@ def caption_from_file(): # pylint: disable=missing-function-docstring
 def caption_from_url(): # pylint: disable=missing-function-docstring
     if request.method == 'POST':
         img_url = request.form['url']
-        LOG.info("Image URL: %s", img_url)
+        logging.info("Image URL: %s", img_url)
         if not img_url:
             flash("Image URL is Required!")
             return redirect(url_for('caption_from_url'))
         raw_image = open_image_from_url(str(img_url))
         processed_img = process_image(raw_image)
         caption = get_caption(processed_img)
-        LOG.info("Caption: %s", caption)
+        logging.info("Caption: %s", caption)
 
         # need to send list of dictionary
         return render_template(
