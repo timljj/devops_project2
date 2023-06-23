@@ -77,10 +77,10 @@ Set up conda environment
 ## Illustrations
 
 App Flow
-![image info]("https://github.com/timljj/devops_project2/blob/main/static/app_flow.PNG")
+![image info](https://github.com/timljj/devops_project2/blob/main/static/app_flow.PNG)
 
 Image Captioning Flow
-![image info]("https://github.com/timljj/devops_project2/blob/main/static/image_captioning_flow.PNG")
+![image info](https://github.com/timljj/devops_project2/blob/main/static/image_captioning_flow.PNG)
 
 <!-- USAGE EXAMPLES -->
 ## Usage
