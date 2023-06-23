@@ -1,7 +1,6 @@
-Flask==1.1.2
-ipdb==0.13.9
-Pillow==9.0.1
-Pillow==9.5.0
-Requests==2.31.0
+Flask
+ipdb
+Pillow
+Requests
 torch==1.12.1
 transformers==4.29.0
