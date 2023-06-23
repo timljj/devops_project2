@@ -1,5 +1,4 @@
 Flask
-ipdb
 Pillow
 Requests
 torch==1.12.1

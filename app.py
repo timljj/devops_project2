@@ -13,9 +13,6 @@ LOG = create_logger(app)
 
 app.config['SECRET_KEY'] = '3f651974d8272f5f35717559f41023c8a567f70c34ea3568'
 
-# device = "cuda" if torch.cuda.is_available() else "cpu"
-
-
 processor = BlipProcessor.from_pretrained("Salesforce/blip-image-captioning-base")
 model = BlipForConditionalGeneration.from_pretrained("Salesforce/blip-image-captioning-base")
 
@@ -30,7 +27,7 @@ def open_image_from_url(img_url):
     Returns:
         PIL.Image.Image: The image grabbed from the URL.
     """
-    raw_image = Image.open(requests.get(img_url, stream=True).raw).convert('RGB')
+    raw_image = Image.open(requests.get(img_url, stream=True, timeout=20).raw).convert('RGB')
     return raw_image
 
 def process_image(raw_image, text='A picture of'):
