@@ -1,11 +1,9 @@
 '''This file runs the image captioning app.
 '''
 
-import base64
-
 import requests
 from PIL import Image
-from flask import Flask, request, render_template, flash
+from flask import Flask, request, render_template, flash, redirect, url_for
 from transformers import BlipProcessor, BlipForConditionalGeneration
 
 
@@ -58,38 +56,37 @@ def get_caption(inputs):
     """
     out = model.generate(**inputs)
     caption = processor.decode(out[0], skip_special_tokens=True)
+    caption = caption[0].upper() + caption[1:]
     return caption
 
 @app.route('/')
 def home(): # pylint: disable=missing-function-docstring
     return render_template('index.html')
 
-# @app.route('/caption_from_file', methods=['POST'])
-# def caption_from_file():
-#     if request.method == 'POST':
-#         file = request.files['file']
-#         img_bytes = file.read()
-#         class_id, class_name = get_caption(image_bytes=img_bytes)
-#         return jsonify({'class_id': class_id, 'class_name': class_name})
+@app.route('/caption_from_file', methods=['POST'])
+def caption_from_file():
+    return render_template('caption_from_file.html')
 
 @app.route('/caption_from_url', methods=['GET', 'POST'])
 def caption_from_url(): # pylint: disable=missing-function-docstring
-    caption = None
-    img_url = None
     if request.method == 'POST':
         img_url = request.form['url']
-        print(img_url)
+        app.logger.info(f"Image URL: {img_url}")
         if not img_url:
             flash("Image URL is Required!")
+            return redirect(url_for('caption_from_url'))
         else:
             raw_image = open_image_from_url(str(img_url))
-            disp_img = base64.b64encode(raw_image)
             processed_img = process_image(raw_image)
             caption = get_caption(processed_img)
-            print(f'Caption: {caption}')
+            app.logger.info(f"Caption: {caption}")
 
-    # need to send list of dictionary
-    return render_template('caption_from_url.html', context=[{'caption': caption, 'img': disp_img}])
+            # need to send list of dictionary
+            return render_template(
+                'caption_from_url.html', context=[{'caption': caption, 'img_url': img_url}]
+            )
+    else:
+        return render_template('caption_from_url.html')
 
 if __name__ == '__main__':
     app.run()

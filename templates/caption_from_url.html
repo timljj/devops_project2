@@ -3,6 +3,7 @@
 
 {% block content %}
     <h1>{% block title %} Image Captioning From URL {% endblock %}</h1>
+    <!-- Pass in URL to the python backend -->
     <form method="post">
         <label for="title">Input URL Below</label>
         <br>
@@ -18,14 +19,13 @@
     {% for message in get_flashed_messages() %}
         <div class="alert">{{ message }}</div>
     {% endfor %}
+    <!-- Grab the predicted caption from the python backend -->
     {% for message in context %}
         <div class='img'>
-            <img>{{ message['img'] }}</img>
+            <img src={{ message['img_url'] }}></img>
         </div>
         <div class='caption'>
             <p>{{ message['caption'] }}</p>
         </div>
     {% endfor %}
 {% endblock %}
-<!-- I need to pass this URL to the python backend -->
-<!-- I need to grab the predicted caption from the python backend -->
