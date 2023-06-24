@@ -17,7 +17,6 @@ RUN pip install -r requirements.txt
 RUN if [ "$(uname)" = "Windows" ]; then set FLASK_APP=app; else export FLASK_APP=app; fi
 
 EXPOSE 5000 
-EXPOSE 8080
 
 # docker run will run this command to start the app in localhost
-CMD ["flask", "run", "--host=0.0.0.0", "--port=8080"]
+CMD ["flask", "run", "--host=0.0.0.0"]
