@@ -45,6 +45,8 @@ This project attempts to utilise various GitHub Action Workflows like Pylint, Do
 
 ### Prerequisites
 
+### 1) Run from source
+
 Set up conda environment
 * Create conda environment
   ```sh
@@ -66,6 +68,10 @@ Set up conda environment
    ```sh
    pip install -r requirements.txt
    ```
+
+### 2) Run from Docker
+
+### 3) Run From URL (Deployed on Google Cloud Run)
 
 <!-- Diagrams to Illustrate How the App Works -->
 ## Illustrations
@@ -95,7 +101,7 @@ Image Captioning Flow
 - [DONE] Add Webhook Call from GitHub to Discord 
 - [ONGOING] Add GitHub Actions
     - [DONE] Pylint
-    - [ONGOING] Docker
+    - [DONE] Docker
     - [ONGOING] Google Cloud Run
 - [DONE] Add Flask App
 - [DONE] Add Image Captioning Model to Flask App
