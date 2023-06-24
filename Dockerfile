@@ -20,4 +20,4 @@ EXPOSE 5000
 EXPOSE 8080
 
 # docker run will run this command to start the app in localhost
-CMD ["flask", "run", "--host=0.0.0.0"]
+CMD ["flask", "run", "--host=0.0.0.0", "--port=8080"]
