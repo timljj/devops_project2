@@ -1,6 +1,5 @@
 '''This file runs the image captioning app.
 '''
-import os
 import logging
 import requests
 from PIL import Image
