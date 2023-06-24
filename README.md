@@ -82,8 +82,6 @@ App Flow
 Image Captioning Flow
 ![image info](https://github.com/timljj/devops_project2/blob/main/static/image_captioning_flow.PNG)
 
-<!-- USAGE EXAMPLES -->
-## Usage
 
 * Caption Image From URL
   
@@ -94,6 +92,21 @@ Image Captioning Flow
 
 
   ![image info](https://github.com/timljj/devops_project2/blob/main/static/caption_url_result.PNG)
+
+<!-- USAGE EXAMPLES -->
+## Usage
+
+* If Running From local:
+  ```
+  flask run
+  ```
+
+* If Running using Docker
+  ```
+  docker run -p 5000:5000 myflaskapp
+  ```
+* If Running Deployed Website
+  - URL: 
 
 <!-- ROADMAP -->
 ## Roadmap
