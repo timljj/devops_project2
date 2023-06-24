@@ -69,10 +69,6 @@ Set up conda environment
    pip install -r requirements.txt
    ```
 
-### 2) Run from Docker
-
-### 3) Run From URL (Deployed on Google Cloud Run)
-
 <!-- Diagrams to Illustrate How the App Works -->
 ## Illustrations
 
@@ -105,17 +101,17 @@ Image Captioning Flow
   ```
   docker run -p 5000:5000 myflaskapp
   ```
-* If Running Deployed Website
-  - URL: 
+* If Running Deployed Website (Note if it doesn't work, it's likely due to billing disabled)
+  - URL: https://flaskapp-jq3mz27roq-as.a.run.app
 
 <!-- ROADMAP -->
 ## Roadmap
 
 - [DONE] Add Webhook Call from GitHub to Discord 
-- [ONGOING] Add GitHub Actions
+- [DONE] Add GitHub Actions
     - [DONE] Pylint
     - [DONE] Docker
-    - [ONGOING] Google Cloud Run
+    - [DONE] Google Cloud Run
 - [DONE] Add Flask App
 - [DONE] Add Image Captioning Model to Flask App
 - [DONE] Caption Image from URL

@@ -1,11 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Caption Image from File Upload</title>
-</head>
-<body>
-    
-</body>
-</html>
+{% extends 'index.html' %}
+<!-- I need an input box that reads in a URL -->
+
+{% block content %}
+    <h1>{% block title %} Image Captioning From URL {% endblock %}</h1>
+    <!-- Pass in URL to the python backend -->
+    <form method="post">
+        <label for="title">Input URL Below</label>
+        <br>
+        <input type="text" name="url"
+            placeholder="Picture URL"
+            value="{{ request.form['url'] }}"
+            style="width: 500px;">
+        </input>
+        <br>
+        <br>
+        <button type="submit">Caption It!</button>
+    </form>
+    {% for message in get_flashed_messages() %}
+        <div class="alert">{{ message }}</div>
+    {% endfor %}
+    <!-- Grab the predicted caption from the python backend -->
+    {% for message in context %}
+        <div class='img'>
+            <img src={{ message['img_url'] }}></img>
+        </div>
+        <div class='caption'>
+            <p>{{ message['caption'] }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}
